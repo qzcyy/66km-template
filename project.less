@@ -1,0 +1,122 @@
+.car-message-container {
+  display: flex;
+  justify-content: flex-start;
+  flex-wrap: wrap;
+  .car-message-item{
+    width: 429px;
+    height:92px;
+    border-radius:5px;
+    border:1px solid rgba(238,238,238,1);
+    margin: 10px 5px;
+    padding: 15px;
+    .car-message-item-header{
+      position: relative;
+      .car-message-item-header-right-box{
+        position: absolute;
+        top: 0;
+        right: 0;
+        .right-button{
+          border-radius:3px;
+          border:1px solid rgba(221,221,221,1);
+          margin-left: 5px;
+          width:34px;
+          height:20px;
+          border-radius:3px;
+          font-size:12px;
+          font-family:PingFangSC-Regular,PingFang SC;
+          font-weight:400;
+          padding: 3px 5px;
+          background:rgba(246,246,246,1);
+          color:rgba(102,102,102,1);
+          text-decoration: none;
+          &.button-edit{
+            color:rgba(255,255,255,1);
+            background:rgba(38,150,92,1);
+            border: none;
+          }
+        }
+      }
+      >span{
+        height:20px;
+        border-radius:3px;
+        font-size:12px;
+        padding: 3px;
+        margin-left: 5px;
+        font-family:PingFangSC-Regular,PingFang SC;
+        font-weight:400;
+        line-height: 20px;
+        &.gray{
+          background:rgba(246,246,246,1);
+          color:rgba(102,102,102,1);
+        }
+        &.pink{
+          color:rgba(249,109,39,1);
+          background:rgba(254,227,213,1);
+        }
+      }
+      .car-message-item-header-number{
+        transform: translateY(1px);
+        height:22px;
+        font-size:16px;
+        font-family:PingFangSC-Medium,PingFang SC;
+        font-weight:500;
+        color:rgba(51,51,51,1);
+        line-height:22px;
+        display: inline-block;
+      }
+    }
+    .car-message-item-info{
+      margin-top: 15px;
+      width:420px;
+      height:17px;
+      font-size:12px;
+      font-family:PingFangSC-Regular,PingFang SC;
+      font-weight:400;
+      color:rgba(102,102,102,1);
+      line-height:17px;
+      text-overflow: ellipsis;
+      overflow: hidden;
+      white-space: nowrap;
+    }
+    .car-message-item-tips{
+      margin-top: 15px;
+      .car-message-item-tips-item{
+        margin-right: 5px;
+        border-radius:3px;
+        border:1px solid rgba(221,221,221,1);
+        font-size:12px;
+        font-family:PingFangSC-Regular,PingFang SC;
+        font-weight:400;
+        color:rgba(102,102,102,1);
+        display: inline-block;
+        padding: 4px;
+        max-width: 94px;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+        overflow: hidden;
+        &.item-vin{
+          color:rgba(241,157,1,1);
+          border:1px solid rgba(241,157,1,1);
+          max-width: none;
+        }
+        .icon-fadongji{
+          width:15px;
+          height:10px;
+          display: inline-block;
+          background: url("./image/icon-fadongji.png");
+          background-size: contain;
+          margin-right: 3px;
+        }
+        .icon-bao{
+          width:13px;
+          height:13px;
+          transform: translateY(2px);
+          display: inline-block;
+          background: url("./image/icon-bao.png") no-repeat;
+          background-size: contain;
+          margin-right: 3px;
+        }
+      }
+    }
+  }
+}

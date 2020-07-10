@@ -1,0 +1,44 @@
+.dialog-main-1 {
+  width: 1000px;
+  padding: 20px;
+}
+.dialog-main-1 .brand-select {
+  overflow-y: auto;
+  height: 500px;
+}
+.dialog-main-1 .brand-select-item-title {
+  height: 30px;
+  background: #f6f6f6;
+  font-size: 14px;
+  font-family: PingFangSC-Medium, PingFang SC;
+  font-weight: 500;
+  color: #333333;
+  line-height: 30px;
+  padding-left: 10px;
+}
+.dialog-main-1 .brand-select-item-children-box {
+  display: flex;
+  flex-wrap: wrap;
+  padding: 8px 0;
+}
+.dialog-main-1 .brand-select-item-children-box .brand-select-item-children-item {
+  height: 40px;
+  border-radius: 5px;
+  border: 1px solid #dddddd;
+  font-size: 13px;
+  font-family: PingFangSC-Regular, PingFang SC;
+  font-weight: 400;
+  color: #333333;
+  line-height: 40px;
+  margin: 7px 20px 7px 0;
+  width: 102px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  text-align: center;
+  cursor: pointer;
+}
+.dialog-main-1 .brand-select-item-children-box .brand-select-item-children-item.selected {
+  border: 1px solid #26965c;
+  color: #26965c;
+}
+/*# sourceMappingURL=style.css.map */

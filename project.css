@@ -1,0 +1,122 @@
+.car-message-container {
+  display: flex;
+  justify-content: flex-start;
+  flex-wrap: wrap;
+}
+.car-message-container .car-message-item {
+  width: 429px;
+  height: 92px;
+  border-radius: 5px;
+  border: 1px solid #eeeeee;
+  margin: 10px 5px;
+  padding: 15px;
+}
+.car-message-container .car-message-item .car-message-item-header {
+  position: relative;
+}
+.car-message-container .car-message-item .car-message-item-header .car-message-item-header-right-box {
+  position: absolute;
+  top: 0;
+  right: 0;
+}
+.car-message-container .car-message-item .car-message-item-header .car-message-item-header-right-box .right-button {
+  border: 1px solid #dddddd;
+  margin-left: 5px;
+  width: 34px;
+  height: 20px;
+  border-radius: 3px;
+  font-size: 12px;
+  font-family: PingFangSC-Regular, PingFang SC;
+  font-weight: 400;
+  padding: 3px 5px;
+  background: #f6f6f6;
+  color: #666666;
+  text-decoration: none;
+}
+.car-message-container .car-message-item .car-message-item-header .car-message-item-header-right-box .right-button.button-edit {
+  color: #ffffff;
+  background: #26965c;
+  border: none;
+}
+.car-message-container .car-message-item .car-message-item-header > span {
+  height: 20px;
+  border-radius: 3px;
+  font-size: 12px;
+  padding: 3px;
+  margin-left: 5px;
+  font-family: PingFangSC-Regular, PingFang SC;
+  font-weight: 400;
+  line-height: 20px;
+}
+.car-message-container .car-message-item .car-message-item-header > span.gray {
+  background: #f6f6f6;
+  color: #666666;
+}
+.car-message-container .car-message-item .car-message-item-header > span.pink {
+  color: #f96d27;
+  background: #fee3d5;
+}
+.car-message-container .car-message-item .car-message-item-header .car-message-item-header-number {
+  transform: translateY(1px);
+  height: 22px;
+  font-size: 16px;
+  font-family: PingFangSC-Medium, PingFang SC;
+  font-weight: 500;
+  color: #333333;
+  line-height: 22px;
+  display: inline-block;
+}
+.car-message-container .car-message-item .car-message-item-info {
+  margin-top: 15px;
+  width: 420px;
+  height: 17px;
+  font-size: 12px;
+  font-family: PingFangSC-Regular, PingFang SC;
+  font-weight: 400;
+  color: #666666;
+  line-height: 17px;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: nowrap;
+}
+.car-message-container .car-message-item .car-message-item-tips {
+  margin-top: 15px;
+}
+.car-message-container .car-message-item .car-message-item-tips .car-message-item-tips-item {
+  margin-right: 5px;
+  border-radius: 3px;
+  border: 1px solid #dddddd;
+  font-size: 12px;
+  font-family: PingFangSC-Regular, PingFang SC;
+  font-weight: 400;
+  color: #666666;
+  display: inline-block;
+  padding: 4px;
+  max-width: 94px;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+}
+.car-message-container .car-message-item .car-message-item-tips .car-message-item-tips-item.item-vin {
+  color: #f19d01;
+  border: 1px solid #f19d01;
+  max-width: none;
+}
+.car-message-container .car-message-item .car-message-item-tips .car-message-item-tips-item .icon-fadongji {
+  width: 15px;
+  height: 10px;
+  display: inline-block;
+  background: url("./image/icon-fadongji.png");
+  background-size: contain;
+  margin-right: 3px;
+}
+.car-message-container .car-message-item .car-message-item-tips .car-message-item-tips-item .icon-bao {
+  width: 13px;
+  height: 13px;
+  transform: translateY(2px);
+  display: inline-block;
+  background: url("./image/icon-bao.png") no-repeat;
+  background-size: contain;
+  margin-right: 3px;
+}
+/*# sourceMappingURL=project.css.map */

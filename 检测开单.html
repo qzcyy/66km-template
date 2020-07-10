@@ -1,0 +1,356 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport"
+        content="width=device-width, initial-scale=1, maximum-scale=1">
+  <title>检测开单</title>
+  <link rel="stylesheet" href="./layui/css/layui.css">
+  <link rel="stylesheet" href="./css.css">
+</head>
+<body>
+<div class="report-main">
+  <h3>检测报告</h3>
+  <div class="report-package">
+    <label class="layui-form-label"><span
+      class="required-red">*</span>检测套餐</label><span
+    class="icon-question"></span>
+    <form class="layui-form" action="">
+      <div class="layui-input-block">
+        <select name="city" lay-verify="required">
+          <option value="">请选择一个城市</option>
+          <option value="010">北京</option>
+          <option value="021">上海</option>
+          <option value="0571">杭州</option>
+        </select>
+      </div>
+    </form>
+  </div>
+  <h4><i class="icon-car"></i>车辆环视图</h4>
+  <div class="report-item ring-view">
+    <div class="ring-view-canvas">
+      <canvas id="canvasEle"></canvas>
+    </div>
+    <div class="ring-view-operation">
+      <div class="ring-view-operation-item" type="triangle" id="triangle_btn">
+        <i class="icon-triangle"></i>划痕
+      </div>
+      <div class="ring-view-operation-item" type="rift" id="rift_btn">
+        <i class="icon-rift"></i>裂痕
+      </div>
+      <div class="ring-view-operation-item" type="sunken" id="sunken_btn">
+        <i class="icon-sunken"></i>凹陷
+      </div>
+      <div class="ring-view-operation-item" type="damage"
+           id="damage_btn">
+        <i class="icon-damage"></i>损坏
+      </div>
+      <button onclick="saveImg()">baocun</button>
+    </div>
+    <div class="ring-view-right">
+      <div class="view-container-item">
+        <p>车辆环视图</p>
+        <div class="view-container-item-inner">
+          <span class="checked-ok">状态良好</span>
+          <span>密切关注</span>
+          <span>急需处理</span>
+        </div>
+      </div>
+      <div class="view-container-item">
+        <p>备注</p>
+        <div class="layui-form view-container-item-inner">
+          <div class="layui-input-inline">
+            <input type="text" name="" placeholder="请输入" autocomplete="off"
+                   class="layui-input">
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <h4><i class="icon-lamp"></i>警示灯</h4>
+  <div class="report-item lamp-view">
+    <div class="lamp-view-wrapper">
+      <span class="icon-gasbag checked"></span>
+      <span class="icon-engine"></span>
+      <span class="icon-battery checked"></span>
+      <span class="icon-abs"></span>
+      <span class="icon-oil"></span>
+      <span class="icon-brake"></span>
+      <span class="icon-door"></span>
+    </div>
+    <div class="view-container-item">
+      <p class="message-left-abbreviation">警示灯</p>
+      <div class="view-container-item-inner">
+        <span>状态良好</span>
+        <span class="checked-warning">密切关注</span>
+        <span>急需处理</span>
+      </div>
+    </div>
+    <div class="view-container-item">
+      <p class="message-left-abbreviation">备注</p>
+      <div class="layui-form view-container-item-inner">
+        <div class="layui-input-inline">
+          <input type="text" name="" placeholder="请输入" autocomplete="off"
+                 class="layui-input">
+        </div>
+      </div>
+    </div>
+  </div>
+  <h4><i class="icon-wheel"></i>车轮相关</h4>
+  <div class="report-item lamp-view">
+    <h5>电器系统</h5>
+    <div class="view-container-item">
+      <p class="message-left-abbreviation">雨刮片</p>
+      <div class="view-container-item-inner">
+        <span>喷水损坏,大灯清洗异常,电机异常</span>
+        <span class="checked-warning">1.9mm~1.7mm</span>
+        <span>≤1.6mm</span>
+      </div>
+    </div>
+    <div class="view-container-item">
+      <p class="message-left-abbreviation">雨刮系统</p>
+      <div class="view-container-item-inner">
+        <span>无裂纹</span>
+        <span>拉杆松旷,开口胶间隙过大,变形</span>
+        <span class="checked-error">严重龟裂</span>
+      </div>
+    </div>
+    <div class="view-container-item">
+      <p class="message-left-abbreviation">胎压</p>
+      <div class="view-container-item-inner">
+        <span class="checked-ok">正常</span>
+        <span>偏高</span>
+        <span>偏低</span>
+        <span>过高</span>
+        <span>过低</span>
+      </div>
+    </div>
+    <div class="view-container-item">
+      <p class="message-left-abbreviation" title="冷却液字数做限制长changchangchang">
+        冷却液字数做限制长changchangchang</p>
+      <div class="view-container-item-inner">
+        <span class="checked-ok">正常</span>
+        <span>偏高</span>
+        <span>偏低</span>
+        <span>过高</span>
+        <span>过低</span>
+      </div>
+    </div>
+    <div class="view-container-item">
+      <p class="message-left-abbreviation">备注</p>
+      <div class="layui-form view-container-item-inner">
+        <div class="layui-input-inline">
+          <input type="text" name="" placeholder="请输入" autocomplete="off"
+                 class="layui-input">
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="report-item lamp-view">
+    <h5>减震器</h5>
+    <div class="view-container-item">
+      <p class="message-left-abbreviation">漏油</p>
+      <div class="view-container-item-inner">
+        <span>无漏油</span>
+        <span class="checked-warning">轻微漏油</span>
+        <span>严重漏油</span>
+      </div>
+    </div>
+    <div class="view-container-item">
+      <p class="message-left-abbreviation">异响</p>
+      <div class="view-container-item-inner">
+        <span class="checked-ok">无异响</span>
+        <span>有异响</span>
+      </div>
+    </div>
+    <div class="view-container-item">
+      <p class="message-left-abbreviation">备注</p>
+      <div class="layui-form view-container-item-inner">
+        <div class="layui-input-inline">
+          <input type="text" name="" placeholder="请输入" autocomplete="off"
+                 class="layui-input">
+        </div>
+      </div>
+    </div>
+  </div>
+  <h4><i class="icon-engine"></i>发动机舱</h4>
+  <div class="report-item lamp-view">
+    <h5>发动机油底壳放油螺丝</h5>
+    <div class="view-container-item">
+      <p class="message-left-abbreviation">使用年限</p>
+      <div class="view-container-item-inner">
+        <span>5万公里以下</span>
+        <span class="checked-warning">5~6万公里</span>
+        <span>超过6万公里</span>
+      </div>
+    </div>
+    <div class="view-container-item">
+      <p class="message-left-abbreviation">保养周期已归零</p>
+      <div class="view-container-item-inner">
+        <span class="checked-ok">无裂纹</span>
+        <span>有裂纹</span>
+        <span>严重龟裂</span>
+      </div>
+    </div>
+    <div class="view-container-item">
+      <p class="message-left-abbreviation">胎压（厂家半载气压）</p>
+      <div class="view-container-item-inner">
+        <span class="checked-ok">正常</span>
+        <span>偏高</span>
+        <span>偏低</span>
+        <span>过高</span>
+        <span>过低</span>
+      </div>
+    </div>
+    <div class="view-container-item">
+      <p class="message-left-abbreviation">备注</p>
+      <div class="layui-form view-container-item-inner">
+        <div class="layui-input-inline">
+          <input type="text" name="" placeholder="请输入" autocomplete="off"
+                 class="layui-input">
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="report-item lamp-view">
+    <h5>火花塞</h5>
+    <div class="view-container-item">
+      <p class="message-left-abbreviation">使用里程</p>
+      <div class="view-container-item-inner">
+        <span>4万公里以下</span>
+        <span class="checked-warning">4~6万公里</span>
+        <span>超过6万公里</span>
+      </div>
+    </div>
+    <div class="view-container-item">
+      <p class="message-left-abbreviation">电极间隙</p>
+      <div class="view-container-item-inner">
+        <span>≤1.5mm</span>
+        <span>1.6~1.9mm</span>
+        <span>≥2.0mm</span>
+      </div>
+    </div>
+    <div class="view-container-item">
+      <p class="message-left-abbreviation">绝缘体漏电</p>
+      <div class="view-container-item-inner">
+        <span>无</span>
+        <span>有漏电痕迹</span>
+        <span>严重漏电痕迹</span>
+      </div>
+    </div>
+    <div class="view-container-item">
+      <p class="message-left-abbreviation">备注</p>
+      <div class="layui-form view-container-item-inner">
+        <div class="layui-input-inline">
+          <input type="text" name="" placeholder="请输入" autocomplete="off"
+                 class="layui-input">
+        </div>
+      </div>
+    </div>
+  </div>
+  <h4><i class="icon-chassis"></i>底盘</h4>
+  <div class="report-item lamp-view">
+    <h5>球笼防尘套球笼防尘套</h5>
+    <div class="view-container-item">
+      <p class="message-left-abbreviation">漏油</p>
+      <div class="view-container-item-inner">
+        <span>5万公里以下</span>
+        <span class="checked-warning">5~6万公里</span>
+        <span>超过6万公里</span>
+      </div>
+    </div>
+    <div class="view-container-item">
+      <p class="message-left-abbreviation" title="破损字数很长很长怎啊啊啊啊啊啊">
+        破损字数很长很长怎啊啊啊啊啊啊</p>
+      <div class="view-container-item-inner">
+        <span>5万公里以下</span>
+        <span class="checked-warning">5~6万公里</span>
+        <span>超过6万公里</span>
+      </div>
+    </div>
+    <div class="view-container-item">
+      <p class="message-left-abbreviation">备注</p>
+      <div class="layui-form view-container-item-inner">
+        <div class="layui-input-inline">
+          <input type="text" name="" placeholder="请输入" autocomplete="off"
+                 class="layui-input">
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<script src="http://libs.baidu.com/jquery/2.0.0/jquery.min.js"></script>
+<script src="./layui/layui.all.js"></script>
+<script src="./fabric.js"></script>
+<script src="./fabric.min.js"></script>
+<script>
+var t_select
+$(function () {
+  $('.ring-view-operation-item').map(function (index, value) {
+    value.addEventListener('click', function (e) {
+      var _value = $(value)
+      _value.toggleClass('checked')
+      if (_value.hasClass('checked')) {
+        _value.siblings().removeClass('checked')
+        t_select = _value.attr('type')
+      } else {
+        t_select = ''
+      }
+    })
+  })
+})
+
+function saveImg () {
+  //将画板保存为图片格式的函数
+  var img_png_src = canvas.toDataURL('image/png')
+  var imgData = img_png_src.replace('png', 'image/octet-stream')
+  var filename = '导出' + (new Date()).getTime() + '.png'
+  var save_link = document.createElementNS('http://www.w3.org/1999/xhtml', 'a')
+  save_link.href = imgData
+  save_link.download = filename
+  var event = document.createEvent('MouseEvents')
+  event.initMouseEvent('click', true, false, window, 0, 0, 0, 0, 0, false,
+    false, false, false, 0, null)
+  save_link.dispatchEvent(event)
+}
+
+var canvasElement = document.getElementById('canvasEle')
+var canvas = new fabric.Canvas(canvasElement, {
+  selection: false,
+  width: 431,
+  height: 581,
+})
+canvas.setBackgroundImage('./img/canvas-bg.png', canvas.renderAll.bind(canvas))
+canvas.on({
+  'object:moving': function (e) {
+    e.target.opacity = 0.5
+  },
+  'mouse:up': function (e) {
+    if (!e.target) {
+      createCanvasItem(typeMap[t_select], e.pointer)
+    }
+  },
+  'object:modified': function (e) {
+    e.target.opacity = 1
+  },
+})
+var typeMap={
+  triangle:'./img/icon_tan_big.png',
+  rift:'./img/icon_fang_big.png',
+  sunken:'./img/icon_circle_big.png',
+  damage:'./img/icon_close_big.png',
+}
+function createCanvasItem (imageUrl, coordinate) {
+  fabric.Image.fromURL(imageUrl, function (img) {
+    canvas.add(
+      img.set({ left: coordinate.x-8, top: coordinate.y-8, hasControls: false }))
+  })
+}
+
+!function () {
+  var layer = layui.layer
+    , form = layui.form
+}()
+</script>
+</body>
+</html>
