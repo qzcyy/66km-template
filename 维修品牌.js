@@ -1,6 +1,6 @@
 $(document).ready(function () {
   $('.brand-select-item-children-item:not("#allBrand")').on('click',function (e) {
-    if($('.brand-select-item-children-item.selected:not("#allBrand")').length>=15){
+    if((!$(e.target).hasClass('selected'))&&$('.brand-select-item-children-item.selected:not("#allBrand")').length>=15){
       alert('最大只能选择15条')
     }else{
       $(e.target).toggleClass('selected')
