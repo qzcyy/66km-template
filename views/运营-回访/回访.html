@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport"
+        content="width=device-width, initial-scale=1, maximum-scale=1">
+  <title>检测开单</title>
+  <link rel="stylesheet" href="../../layui/css/layui.css">
+  <link rel="stylesheet" href="../../css.css">
+</head>
+<body>
+<div class="tow-container-box">
+  <div class="left-box">
+    <div class="tab-box" style="height: 900px;">
+      <div class="tab-box-title">
+        <div tab="tab1" class="tab-box-title-item checked">工单信息</div>
+        <div tab="tab2" class="tab-box-title-item">回访记录</div>
+      </div>
+      <div class="tab-box-container">
+        <div id="container-1">
+          <div class="card-box container-box-block">
+            <div class="card-box-title">基本信息 <a href="javascript:;" class="btn-box primary-btn" style="margin-left: 10px;">历史消费</a>
+            </div>
+            <div class="card-box-container">
+              <div class="card-box-container-text">
+                <div class="card-box-container-text-item-wrapper">
+                  <div class="card-box-container-text-item">
+                    <span>这是消费门店的名称</span>
+                  </div>
+                </div>
+                <div class="card-box-container-text-item-wrapper">
+                  <div class="card-box-container-text-item">
+                    <span>单号：</span> <a href="javascript:;">WX201612300001</a>
+                  </div>
+                </div>
+                <div class="card-box-container-text-item-wrapper">
+                  <div class="card-box-container-text-item">
+                    <span>开单日期：</span> 2020-12-12
+                  </div>
+                  <div class="card-box-container-text-item">
+                    <span>接待人员：</span> 人民警察
+                  </div>
+                </div>
+                <div class="card-box-container-text-item-wrapper">
+                  <div class="card-box-container-text-item">
+                    <span>姓名：</span> <a href="javascript:;">张三</a>
+                  </div>
+                  <div class="card-box-container-text-item">
+                    <span>手机号：</span> 222
+                  </div>
+                </div>
+                <div class="card-box-container-text-item-wrapper">
+                  <div class="card-box-container-text-item">
+                    <span>车牌号：</span> <a href="javascript:;">PCS-110</a>
+                  </div>
+                  <div class="card-box-container-text-item">
+                    <span>车型：</span> 车门已焊死，谁也别想下车
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="card-box container-box-block">
+            <div class="card-box-title">项目明细</div>
+            <div class="card-box-container fuse-box-container">
+              <div class="table-box container-box-block">
+                <table>
+                  <colgroup>
+                    <col width="52px">
+                    <col width="25%">
+                    <col width="20%">
+                    <col width="15%">
+                  </colgroup>
+                  <thead>
+                  <tr>
+                    <th>序号</th>
+                    <th>项目名称</th>
+                    <th>施工人员</th>
+                    <th>销售人员</th>
+                    <th>项目备注</th>
+                  </tr>
+                  </thead>
+                  <tbody>
+                  <tr>
+                    <td>1</td>
+                    <td>更换发动机</td>
+                    <td>藤原拓海</td>
+                    <td>高桥凉介</td>
+                    <td>是86,86上山了是86,86上山了</td>
+                  </tr>
+                  <tr>
+                    <td>1</td>
+                    <td>更换防冻液</td>
+                    <td>王刚、李四</td>
+                    <td>张峰</td>
+                    <td>这是备注信息</td>
+                  </tr>
+                  <tr>
+                    <td>1</td>
+                    <td>更换防冻液</td>
+                    <td>王刚、李四</td>
+                    <td>张峰</td>
+                    <td>这是备注信息</td>
+                  </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </div>
+          <div class="card-box container-box-block">
+            <div class="card-box-title">商品明细</div>
+            <div class="card-box-container fuse-box-container">
+              <div class="table-box">
+                <table>
+                  <colgroup>
+                    <col width="52px">
+                    <col width="25%">
+                    <col width="10%">
+                    <col width="20%">
+                    <col width="15%">
+                  </colgroup>
+                  <thead>
+                  <tr>
+                    <th>序号</th>
+                    <th>商品名称</th>
+                    <th>单位</th>
+                    <th>施工人员</th>
+                    <th>销售人员</th>
+                    <th>项目备注</th>
+                  </tr>
+                  </thead>
+                  <tbody>
+                  <tr>
+                    <td>1</td>
+                    <td>轮胎</td>
+                    <td>个</td>
+                    <td>王刚、李四</td>
+                    <td>张峰</td>
+                    <td>这是备注信息</td>
+                  </tr>
+                  <tr>
+                    <td>1</td>
+                    <td>轮胎</td>
+                    <td>个</td>
+                    <td>王刚、李四</td>
+                    <td>张峰</td>
+                    <td>这是备注信息</td>
+                  </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </div>
+          <div class="card-box">
+            <div class="card-box-title">附加费</div>
+            <div class="card-box-container fuse-box-container">
+              <div class="table-box">
+                <table>
+                  <colgroup>
+                    <col width="52px">
+                    <col width="40%">
+                    <col width="40%">
+                  </colgroup>
+                  <thead>
+                  <tr>
+                    <th>序号</th>
+                    <th>附加费名称</th>
+                    <th>附加费备注</th>
+                  </tr>
+                  </thead>
+                  <tbody>
+                  <tr>
+                    <td>1</td>
+                    <td>伙食费</td>
+                    <td>张三绝活三口一头猪</td>
+                  </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div id="container-2" style="display: none">
+          <div class="progress-bar-box">
+            <div class="progress-bar-box-wrapper">
+              <div class="progress-bar-box-item">
+                <div class="progress-bar-box-item-title">
+                  2020-01-21 12:32:42  回访人
+                </div>
+                <div class="progress-bar-box-item-message">
+                  央广网贵阳7月29日消息（记者陈屹）7月29日，中建三局一公司在贵州省贵安新区正式发布户外劳动者综合服务站建设方案。贵州省今年计划再建1万个户外劳动者服务站，参与贵州建设的央企积极响应，纷纷将户外劳动者综合服务站建设覆盖向全项目，助推了贵州省对户外劳动者的民生关怀行动。到目前，全省已完成超5000个服务站选点工作，360多万名户外劳动者受益。
+                </div>
+              </div>
+              <div class="progress-bar-box-item">
+                <div class="progress-bar-box-item-title">
+                  2020-01-21 12:32:42  回访人
+                </div>
+                <div class="progress-bar-box-item-message">
+                  据中建三局一公司相关负责人介绍，目前，一公司在贵州承建有贵安同济医院、秀印高速公路、雷榕高速公路等30多个项目，但项目工地服务关怀工友的服务站建设是目前的短板，这次推出的方案，将补上这一短板，在今年内实现所有项目户外劳动者综合服务站全覆盖。
+                </div>
+              </div>
+              <div class="progress-bar-box-item">
+                <div class="progress-bar-box-item-title">
+                  2020-01-21 12:32:42  回访人
+                </div>
+                <div class="progress-bar-box-item-message">
+                  这是回访记录的内容这是回访记录的内容这是回访记录的内 容这是回访记录的内容
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="right-box">
+    <div class="tab-box" style="height: 900px;">
+      <div class="tab-box-title">
+        <div class="tab-box-title-item">回访信息</div>
+      </div>
+      <div class="tab-box-container">
+        <div class="table-box deepen-thead">
+          <table>
+            <colgroup>
+              <col width="52px">
+              <col width="70%">
+              <col width="20%">
+            </colgroup>
+            <thead>
+            <tr>
+              <th>序号</th>
+              <th>回访问题</th>
+              <th>评分</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr>
+              <td>1</td>
+              <td>为什么伙食费这么高</td>
+              <td>
+                <select class="select-box">
+                  <option>猪太贵</option>
+                  <option>伙食太好</option>
+                </select>
+              </td>
+            </tr>
+            <tr>
+              <td>1</td>
+              <td>为什么伙食费这么高</td>
+              <td>
+                <select class="select-box">
+                  <option>猪太贵</option>
+                  <option>伙食太好</option>
+                </select>
+              </td>
+            </tr>
+            <tr>
+              <td>1</td>
+              <td>为什么伙食费这么高</td>
+              <td>
+                <select class="select-box">
+                  <option>猪太贵</option>
+                  <option>伙食太好</option>
+                </select>
+              </td>
+            </tr>
+            </tbody>
+          </table>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</div>
+</body>
+<script src="http://libs.baidu.com/jquery/2.0.0/jquery.min.js"></script>
+<script src="../../layui/layui.all.js"></script>
+<script>
+$(function () {
+  $('.left-box .tab-box-title-item').on('click',function (e) {
+    $(e.target).addClass('checked')
+    $(e.target).siblings().removeClass('checked')
+    if($(e.target).attr('tab')==='tab1'){
+      $('#container-1').show()
+      $('#container-2').hide()
+
+    }
+    if($(e.target).attr('tab')==='tab2'){
+      $('#container-1').hide()
+      $('#container-2').show()
+    }
+  })
+})
+</script>
+</html>
