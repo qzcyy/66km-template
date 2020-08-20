@@ -13,6 +13,20 @@
 .color-orange {
   color: #ff4f00;
 }
+.icon-danhao {
+  width: 15px;
+  height: 17px;
+  background: url('../image/icon_ordernum@2x.png') no-repeat;
+  background-size: contain;
+  display: inline-block;
+}
+.icon-danhao {
+  width: 15px;
+  height: 17px;
+  background: url('../image/icon_shop@2x.png') no-repeat;
+  background-size: contain;
+  display: inline-block;
+}
 .card-box {
   border: 1px solid #eeeeee;
 }
@@ -186,6 +200,9 @@
 }
 .ml10 {
   margin-left: 10px ;
+}
+.mr10 {
+  margin-right: 10px ;
 }
 .count-input {
   display: flex;

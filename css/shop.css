@@ -2,6 +2,73 @@
   width: 1600px;
   margin: 0 auto;
 }
+.shop-container .shop-container-title {
+  display: flex;
+  align-items: center;
+  margin: 20px 0;
+}
+.shop-container .shop-container-title .shop-container-title-state {
+  font-size: 14px;
+  font-family: PingFangSC-Medium, PingFang SC;
+  font-weight: 500;
+  color: #ff4f00;
+}
+.shop-container .shop-container-info-box {
+  display: flex;
+  justify-content: space-between;
+}
+.shop-container .shop-container-info-box .shop-container-info-item {
+  width: 355px;
+  min-height: 117px;
+  border: 1px solid #eeeeee;
+  padding: 15px;
+}
+.shop-container .shop-container-info-box .shop-container-info-item > h4 {
+  font-size: 14px;
+  font-family: PingFangSC-Medium, PingFang SC;
+  font-weight: 500;
+  color: #3c3c3c;
+}
+.shop-container .shop-container-info-box .shop-container-info-item .shop-container-info-item-message {
+  margin-top: 10px;
+  display: flex;
+}
+.shop-container .shop-container-info-box .shop-container-info-item .shop-container-info-item-message > span {
+  display: block;
+  font-size: 12px;
+  font-family: PingFangSC-Medium, PingFang SC;
+  font-weight: 500;
+  color: #555555;
+  width: 70px;
+  min-width: 70px;
+}
+.shop-container .shop-container-info-box .shop-container-info-item .shop-container-info-item-message > p {
+  font-size: 12px;
+  font-family: PingFangSC-Regular, PingFang SC;
+  font-weight: 400;
+  color: #666666;
+}
+.shop-container .shop-container-table-box .table-operation2 {
+  margin-top: 50px;
+  padding: 10px;
+  background: #f6f6f6;
+  border: 1px solid #dddddd;
+  display: flex;
+  position: relative;
+  justify-content: flex-end;
+}
+.shop-container .shop-container-table-box .table-operation2 .table-operation2-item {
+  padding: 5px;
+  text-align: right;
+  margin-right: 10px;
+}
+.shop-container .shop-container-table-box .table-operation2 .table-operation2-item > span,
+.shop-container .shop-container-table-box .table-operation2 .table-operation2-item > a {
+  font-size: 13px;
+  font-family: PingFangSC-Regular, PingFang SC;
+  font-weight: 400;
+  color: #3c3c3c;
+}
 .shop-container .shop-container-table-box .table-operation {
   margin-top: 50px;
   height: 50px;
@@ -51,6 +118,8 @@
 }
 .shop-container .shop-container-table-box > table {
   width: 100%;
+  max-height: 800px;
+  overflow-y: auto;
 }
 .shop-container .shop-container-table-box > table thead {
   background: #f6f6f6;
