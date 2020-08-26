@@ -233,4 +233,109 @@
   border: 1px solid #dddddd;
   text-align: center;
 }
+.dialog {
+  padding: 10px;
+}
+.dialog .dialog-form .form-rate .layui-rate {
+  padding: 0;
+}
+.dialog .dialog-form .form-rate .layui-inline {
+  color: #F03B3B;
+  font-size: 12px;
+  font-family: PingFangSC-Regular, PingFang SC;
+  font-weight: 400;
+}
+.dialog .dialog-form .form-evaluate {
+  display: flex;
+}
+.dialog .dialog-form .form-evaluate > div {
+  width: 40px;
+  font-size: 12px;
+  font-family: PingFangSC-Regular, PingFang SC;
+  font-weight: 400;
+  color: #666666;
+  position: relative;
+  padding-left: 20px;
+}
+.dialog .dialog-form .form-evaluate > div.good.checked {
+  color: #f03b3b;
+}
+.dialog .dialog-form .form-evaluate > div.good.checked:before {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 16px;
+  height: 16px;
+  background: url("../image/好评@2x.png") no-repeat;
+  content: '';
+  background-size: contain;
+}
+.dialog .dialog-form .form-evaluate > div.good:before {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 16px;
+  height: 16px;
+  background: url("../image/icon_good_def@2x.png") no-repeat;
+  content: '';
+  background-size: contain;
+}
+.dialog .dialog-form .form-evaluate > div.middle.checked {
+  color: #FCBD29;
+}
+.dialog .dialog-form .form-evaluate > div.middle.checked:before {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 16px;
+  height: 16px;
+  background: url("../image/icon_normal_pre@2x.png") no-repeat;
+  content: '';
+  background-size: contain;
+}
+.dialog .dialog-form .form-evaluate > div.middle:before {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 16px;
+  height: 16px;
+  background: url("../image/icon_normal_def@2x.png") no-repeat;
+  content: '';
+  background-size: contain;
+}
+.dialog .dialog-form .form-evaluate > div.bad.checked {
+  color: #44A7F8;
+}
+.dialog .dialog-form .form-evaluate > div.bad.checked:before {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 16px;
+  height: 16px;
+  background: url("../image/icon_bad_pre@2x.png") no-repeat;
+  content: '';
+  background-size: contain;
+}
+.dialog .dialog-form .form-evaluate > div.bad:before {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 16px;
+  height: 16px;
+  background: url("../image/icon_bad_def@2x.png") no-repeat;
+  content: '';
+  background-size: contain;
+}
+.dialog .dialog-form .dialog-form-item {
+  padding: 5px;
+  display: flex;
+  align-items: baseline;
+}
+.dialog .dialog-form .dialog-form-item .dialog-form-item-title {
+  font-size: 12px;
+  font-family: PingFangSC-Regular, PingFang SC;
+  font-weight: 400;
+  color: #333333;
+  width: 60px;
+}
 /*# sourceMappingURL=css.css.map */

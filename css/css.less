@@ -282,3 +282,118 @@
     text-align: center;
   }
 }
+.dialog{
+  padding: 10px;
+  .dialog-form{
+    .form-rate{
+      .layui-rate{
+        padding: 0;
+      }
+      .layui-inline{
+        color: #F03B3B;
+        font-size:12px;
+        font-family:PingFangSC-Regular,PingFang SC;
+        font-weight:400;
+      }
+    }
+    .form-evaluate{
+      display: flex;
+      >div{
+        width: 40px;
+        font-size:12px;
+        font-family:PingFangSC-Regular,PingFang SC;
+        font-weight:400;
+        color:rgba(102,102,102,1);
+        position: relative;
+        padding-left: 20px;
+        &.good{
+          &.checked{
+            color:rgba(240,59,59,1);
+            &:before{
+              position: absolute;
+              top: 0;
+              left: 0;
+              width: 16px;
+              height: 16px;
+              background: url("../image/好评@2x.png") no-repeat;
+              content: '';
+              background-size: contain;
+            }
+          }
+          &:before{
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 16px;
+            height: 16px;
+            background: url("../image/icon_good_def@2x.png") no-repeat;
+            content: '';
+            background-size: contain;
+          }
+        }
+        &.middle{
+          &.checked{
+            color:#FCBD29;
+            &:before{
+              position: absolute;
+              top: 0;
+              left: 0;
+              width: 16px;
+              height: 16px;
+              background: url("../image/icon_normal_pre@2x.png") no-repeat;
+              content: '';
+              background-size: contain;
+            }
+          }
+          &:before{
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 16px;
+            height: 16px;
+            background: url("../image/icon_normal_def@2x.png") no-repeat;
+            content: '';
+            background-size: contain;
+          }
+        }
+        &.bad{
+          &.checked{
+            color:#44A7F8;
+            &:before{
+              position: absolute;
+              top: 0;
+              left: 0;
+              width: 16px;
+              height: 16px;
+              background: url("../image/icon_bad_pre@2x.png") no-repeat;
+              content: '';
+              background-size: contain;
+            }
+          }
+          &:before{
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 16px;
+            height: 16px;
+            background: url("../image/icon_bad_def@2x.png") no-repeat;
+            content: '';
+            background-size: contain;
+          }
+        }
+      }
+    }
+    .dialog-form-item{
+      padding: 5px;
+      display: flex;
+      align-items: baseline;
+      .dialog-form-item-title{
+        font-size:12px;
+        font-family:PingFangSC-Regular,PingFang SC;
+        font-weight:400;
+        color:rgba(51,51,51,1);
+        width: 60px;
+      }
+    }
+  }
+}

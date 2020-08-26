@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+  <link rel="stylesheet" href="../../layui/css/layui.css">
+  <link rel="stylesheet" href="../../css/css.css">
+  <link rel="stylesheet" href="../../css/shop.css">
+</head>
+<body>
+<div class="dialog">
+  <div class="dialog-form">
+    <div class="dialog-form-item">
+      <div class="dialog-form-item-title">总体评价</div>
+      <div class="dialog-form-item-title-main">
+        <div class="form-evaluate">
+          <div class="good checked">好评</div>
+          <div class="middle">中评</div>
+          <div class="bad">差评</div>
+        </div>
+      </div>
+    </div>
+    <div class="dialog-form-item">
+      <div class="dialog-form-item-title">配送服务</div>
+      <div class="dialog-form-item-title-main">
+        <div id="score-1" class="form-rate"></div>
+      </div>
+    </div>
+    <div class="dialog-form-item">
+      <div class="dialog-form-item-title">服务态度</div>
+      <div class="dialog-form-item-title-main">
+        <div id="score-2" class="form-rate"></div>
+      </div>
+    </div>
+    <div class="dialog-form-item">
+      <div class="dialog-form-item-title">评价内容</div>
+      <div class="dialog-form-item-title-main">
+        <textarea name="desc" placeholder="请输入内容" class="layui-textarea"
+                  style="width: 470px"></textarea>
+      </div>
+    </div>
+  </div>
+</div>
+</body>
+</html>
+<script src="http://libs.baidu.com/jquery/2.0.0/jquery.min.js"></script>
+<script src="../../layui/layui.all.js"></script>
+<script type="text/javascript">
+$(function () {
+  $('.form-evaluate div').on('click', function (e) {
+    $(e.target).parent().children('div').removeClass('checked')
+    $(e.target).addClass('checked')
+  })
+})
+layui.use(['rate', 'form'], function () {
+  var rate = layui.rate
+  //基础效果
+  rate.render({
+    elem: '#score-1'
+    , value: 3
+    , text: true
+    , theme: '#F03B3B' //自定义主题色
+    , setText: function (value) { //自定义文本的回调
+      var arrs = {
+        '1': '非常差'
+        , '2': '差'
+        , '3': '一般'
+        , '4': '好'
+        , '5': '非常好',
+      }
+      this.span.text(arrs[value] || (value + '星'))
+    },
+  })
+  rate.render({
+    elem: '#score-2'
+    , value: 3
+    , text: true
+    , theme: '#F03B3B' //自定义主题色
+    , setText: function (value) { //自定义文本的回调
+      var arrs = {
+        '1': '非常差'
+        , '2': '差'
+        , '3': '一般'
+        , '4': '好'
+        , '5': '非常好',
+      }
+      this.span.text(arrs[value] || (value + '星'))
+    },
+  })
+})
+</script>
