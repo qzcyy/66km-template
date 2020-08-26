@@ -4,7 +4,8 @@
   <meta charset="UTF-8">
   <title>Title</title>
   <link rel="stylesheet" href="../../layui/css/layui.css">
-  <link rel="stylesheet" href="../../css/shop.css">
+  <link rel="stylesheet" href="../../c_style/css.css">
+  <link rel="stylesheet" href="../../c_style/shop.css">
 </head>
 <body>
 <div>
@@ -22,8 +23,8 @@
         <div class="shop-container-filter-item dotted-line">
           <div class="shop-container-filter-item-title">车型</div>
           <div class="shop-container-filter-item-container">
-            <div class="shop-container-filter-item-car-type">东风日产奇骏20102.5 无级 XV
-              至尊版（ 20112011 ）
+            <div class="shop-container-filter-item-car-type">东风日产奇骏20102.5 无级 XV 至尊版（ 20112011 ）
+              <a class="clear-btn">×</a>
             </div>
             <div class="shop-container-filter-item-btn btn-1">选择车型</div>
             <div class="shop-container-filter-item-btn btn-2">VIN 图片识别</div>
@@ -32,7 +33,7 @@
         </div>
         <div class="shop-container-filter-item">
           <div class="shop-container-filter-item-title">品类</div>
-          <div class="shop-container-filter-item-container">
+          <div id="brand-filter" class="shop-container-filter-item-container put-container">
             <span class="shop-container-filter-item-brand">不限</span>
             <span class="shop-container-filter-item-brand checked">滤清器类</span>
             <span class="shop-container-filter-item-brand">滤清器类</span>
@@ -52,10 +53,12 @@
             <span class="shop-container-filter-item-brand">滤清器类</span>
             <span class="shop-container-filter-item-brand">滤清器类</span>
           </div>
+          <div id="brand-show" class="shop-container-filter-item-more">展开∨</div>
+          <div id="brand-hide" class="shop-container-filter-item-more" style="display: none">收起∧</div>
         </div>
         <div class="shop-container-filter-item dotted-line">
           <div class="shop-container-filter-item-title">子品类</div>
-          <div class="shop-container-filter-item-container">
+          <div id="brand-children-filter" class="shop-container-filter-item-container put-container">
             <span class="shop-container-filter-item-brand">不限</span>
             <span class="shop-container-filter-item-brand checked">滤清器类</span>
             <span class="shop-container-filter-item-brand">滤清器类</span>
@@ -66,6 +69,8 @@
             <span class="shop-container-filter-item-brand">滤清器类</span>
             <span class="shop-container-filter-item-brand">滤清器类</span>
           </div>
+          <div id="brand-children-show" class="shop-container-filter-item-more">展开∨</div>
+          <div id="brand-children-hide" class="shop-container-filter-item-more" style="display: none">收起∧</div>
         </div>
         <div class="shop-container-filter-item">
           <div class="shop-container-filter-item-title">品牌</div>
@@ -95,7 +100,9 @@
           <col width="10%">
           <col width="10%">
           <col width="10%">
-          <col width="15%">
+          <col width="10%">
+          <col width="8%">
+          <col width="8%">
         </colgroup>
         <thead>
         <tr>
@@ -107,6 +114,7 @@
           <th>商品品质/产地</th>
           <th>适配车型</th>
           <th>替换件</th>
+          <th>数量</th>
           <th>操作</th>
         </tr>
         </thead>
@@ -148,6 +156,13 @@
             <span class="color-blue">32</span>
           </td>
           <td>
+            <div class="count-input">
+              <div class="count-input-btn count-input-btn-add">+</div>
+              <input type="text" value="1">
+              <div class="count-input-btn count-input-btn-sub">-</div>
+            </div>
+          </td>
+          <td>
             <i class="icon-shopcar"></i>
           </td>
         </tr>
@@ -188,6 +203,13 @@
             <span class="color-blue">32</span>
           </td>
           <td>
+            <div class="count-input">
+              <div class="count-input-btn count-input-btn-add">+</div>
+              <input type="text" value="1">
+              <div class="count-input-btn count-input-btn-sub">-</div>
+            </div>
+          </td>
+          <td>
             <i class="icon-shopcar"></i>
           </td>
         </tr>
@@ -199,4 +221,36 @@
 </body>
 <script src="http://libs.baidu.com/jquery/2.0.0/jquery.min.js"></script>
 <script src="../../layui/layui.all.js"></script>
+<script type="text/javascript">
+$(function () {
+  $('.count-input-btn-add').on('click',function (e) {
+    if($(e.target).parent().hasClass('count-input-disabled')) return
+    $(e.target).parent().children('input').attr('value',~~$(e.target).parent().children('input').attr('value')+1)
+  })
+  $('.count-input-btn-sub').on('click',function (e) {
+    if($(e.target).parent().hasClass('count-input-disabled')) return
+    $(e.target).parent().children('input').attr('value',~~$(e.target).parent().children('input').attr('value')-1>0?~~$(e.target).parent().children('input').attr('value')-1:1)
+  })
+  $('#brand-show').on('click',function (e) {
+    $('#brand-hide').show()
+    $('#brand-show').hide()
+    $('#brand-filter').removeClass('put-container')
+  })
+  $('#brand-hide').on('click',function (e) {
+    $('#brand-hide').hide()
+    $('#brand-show').show()
+    $('#brand-filter').addClass('put-container')
+  })
+  $('#brand-children-show').on('click',function (e) {
+    $('#brand-children-hide').show()
+    $('#brand-children-show').hide()
+    $('#brand-children-filter').removeClass('put-container')
+  })
+  $('#brand-children-hide').on('click',function (e) {
+    $('#brand-children-hide').hide()
+    $('#brand-children-show').show()
+    $('#brand-children-filter').addClass('put-container')
+  })
+})
+</script>
 </html>

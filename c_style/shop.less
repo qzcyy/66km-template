@@ -1,5 +1,5 @@
 .shop-container{
-  width: 1600px;
+  width: 1300px;
   margin: 0 auto;
   .shop-container-title{
     display: flex;
@@ -271,6 +271,7 @@
         color:rgba(102,102,102,1);
         padding: 0 8px;
         cursor: pointer;
+        line-height: 40px;
         &.checked{
           color:rgba(63,144,247,1);
         }
@@ -288,13 +289,31 @@
         bottom: 0;
         left: 0;
       }
+      .shop-container-filter-item-more{
+        display: inline-block;
+        background-color: #fff;
+        width: 58px;
+        padding: 3px 0;
+        text-align: center;
+        vertical-align: top;
+        position: absolute;
+        cursor: pointer;
+        border: 1px solid #e1e5ed;
+        color: #666;
+        right: 10px;
+        top: 6px;
+      }
       .shop-container-filter-item-container{
-        padding: 10px;
         padding-left: 120px;
         display: flex;
         flex-wrap: wrap;
         align-items: center;
-        min-height: 20px;
+        min-height: 40px;
+        margin-right: 80px;
+        &.put-container{
+          height: 40px;
+          overflow: hidden;
+        }
         .shop-container-filter-item-container-top-filter{
           width: 88px;
           height: 40px;
@@ -363,13 +382,15 @@
           font-weight:400;
           color:rgba(60,60,60,1);
           position: relative;
-          &:before{
+          .clear-btn{
             position: absolute;
             display: block;
-            content: '×';
             font-size: 20px;
-            right: 10px;
+            right: 0px;
             cursor: pointer;
+            top: 0;
+            width: 25px;
+            height: 25px;
           }
         }
       }
@@ -428,7 +449,7 @@
   }
 }
 .icon-shopcar{
-  background: url("../image/shopcar.png") no-repeat;
+  background: url("../c_image/shopcar.png") no-repeat;
   width:20px;
   height:16px;
   background-size: contain;

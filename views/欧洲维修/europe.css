@@ -4,7 +4,7 @@
   bottom: 0;
   left: 0;
   right: 0;
-  background: url("../../image/europe-bg2.png") 100% no-repeat;
+  background: url("../../c_image/europe-bg2.png") 100% no-repeat;
   background-attachment: fixed;
   background-size: cover;
   display: flex;
@@ -17,7 +17,7 @@
   background: #ffffff;
   box-shadow: 0px 2px 24px 0px rgba(0, 0, 0, 0.1);
   border-radius: 20px;
-  background: url("../../image/europe-bg1.png") 101% 101% no-repeat;
+  background: url("../../c_image/europe-bg1.png") 101% 101% no-repeat;
   background-color: #fff;
   background-size: 916px 590px;
   position: relative;
@@ -27,7 +27,7 @@
   top: 130px;
   left: 102px;
   width: 340px;
-  background: url("../../image/europe-logo.png") no-repeat;
+  background: url("../../c_image/europe-logo.png") no-repeat;
   background-size: 255px 54px;
   padding-top: 85px;
 }

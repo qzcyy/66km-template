@@ -868,12 +868,12 @@ fabric.CommonMethods = {
     },
 
     /**
-     * Loads image element from given url and passes it to a callback
+     * Loads c_image element from given url and passes it to a callback
      * @memberOf fabric.util
-     * @param {String} url URL representing an image
-     * @param {Function} callback Callback; invoked with loaded image
+     * @param {String} url URL representing an c_image
+     * @param {Function} callback Callback; invoked with loaded c_image
      * @param {*} [context] Context to invoke callback in
-     * @param {Object} [crossOrigin] crossOrigin value to set image element to
+     * @param {Object} [crossOrigin] crossOrigin value to set c_image element to
      */
     loadImage: function(url, callback, context, crossOrigin) {
       if (!url) {
@@ -908,7 +908,7 @@ fabric.CommonMethods = {
       // IE10 / IE11-Fix: SVG contents from data: URI
       // will only be available if the IMG is present
       // in the DOM (and visible)
-      if (url.substring(0,14) === 'data:image/svg') {
+      if (url.substring(0,14) === 'data:c_image/svg') {
         img.onload = null;
         fabric.util.loadImageInDom(img, onLoadCallback);
       }
@@ -917,11 +917,11 @@ fabric.CommonMethods = {
     },
 
     /**
-     * Attaches SVG image with data: URL to the dom
+     * Attaches SVG c_image with data: URL to the dom
      * @memberOf fabric.util
-     * @param {Object} img Image object with data:image/svg src
-     * @param {Function} callback Callback; invoked with loaded image
-     * @return {Object} DOM element (div containing the SVG image)
+     * @param {Object} img Image object with data:c_image/svg src
+     * @param {Function} callback Callback; invoked with loaded c_image
+     * @return {Object} DOM element (div containing the SVG c_image)
      */
     loadImageInDom: function(img, onLoadCallback) {
       var div = fabric.document.createElement('div');
@@ -1127,10 +1127,10 @@ fabric.CommonMethods = {
     },
 
     /**
-     * Creates image element (works on client and node)
+     * Creates c_image element (works on client and node)
      * @static
      * @memberOf fabric.util
-     * @return {HTMLImageElement} HTML image element
+     * @return {HTMLImageElement} HTML c_image element
      */
     createImage: function() {
       return fabric.document.createElement('img');
@@ -1251,7 +1251,7 @@ fabric.CommonMethods = {
           imageData = ctx.getImageData(x, y, (tolerance * 2) || 1, (tolerance * 2) || 1),
           l = imageData.data.length;
 
-      // Split image data - for tolerance > 1, pixelDataSize = 4;
+      // Split c_image data - for tolerance > 1, pixelDataSize = 4;
       for (i = 3; i < l; i += 4) {
         temp = imageData.data[i];
         _isTransparent = temp <= 0;
@@ -2000,7 +2000,7 @@ fabric.CommonMethods = {
 (function () {
 
   /**
-   * Cross-browser wrapper for setting element's style
+   * Cross-browser wrapper for setting element's c_style
    * @memberOf fabric.util
    * @param {HTMLElement} element
    * @param {Object} styles
@@ -2246,9 +2246,9 @@ fabric.CommonMethods = {
   }
 
   /**
-   * Returns style attribute value of a given element
+   * Returns c_style attribute value of a given element
    * @memberOf fabric.util
-   * @param {HTMLElement} element Element to get style attribute for
+   * @param {HTMLElement} element Element to get c_style attribute for
    * @param {String} attr Style attribute to get for element
    * @return {String} Style attribute value of the given element.
    */
@@ -3687,7 +3687,7 @@ if (typeof console !== 'undefined') {
     backgroundColor: '',
 
     /**
-     * Background image of canvas instance.
+     * Background c_image of canvas instance.
      * Should be set via {@link fabric.StaticCanvas#setBackgroundImage}.
      * <b>Backwards incompatibility note:</b> The "backgroundImageOpacity"
      * and "backgroundImageStretch" properties are deprecated since 1.3.9.
@@ -3707,7 +3707,7 @@ if (typeof console !== 'undefined') {
     overlayColor: '',
 
     /**
-     * Overlay image of canvas instance.
+     * Overlay c_image of canvas instance.
      * Should be set via {@link fabric.StaticCanvas#setOverlayImage}.
      * <b>Backwards incompatibility note:</b> The "overlayImageLeft"
      * and "overlayImageTop" properties are deprecated since 1.3.9.
@@ -3753,7 +3753,7 @@ if (typeof console !== 'undefined') {
     clipTo: null,
 
     /**
-     * Indicates whether object controls (borders/controls) are rendered above overlay image
+     * Indicates whether object controls (borders/controls) are rendered above overlay c_image
      * @type Boolean
      * @default
      */
@@ -3767,7 +3767,7 @@ if (typeof console !== 'undefined') {
     allowTouchScrolling: false,
 
     /**
-     * Indicates whether this canvas will use image smoothing, this is on by default in browsers
+     * Indicates whether this canvas will use c_image smoothing, this is on by default in browsers
      * @type Boolean
      * @default
      */
@@ -3781,7 +3781,7 @@ if (typeof console !== 'undefined') {
     viewportTransform: fabric.iMatrix.concat(),
 
     /**
-     * if set to false background image is not affected by viewport transform
+     * if set to false background c_image is not affected by viewport transform
      * @since 1.6.3
      * @type Boolean
      * @default
@@ -3789,7 +3789,7 @@ if (typeof console !== 'undefined') {
     backgroundVpt: true,
 
     /**
-     * if set to false overlya image is not affected by viewport transform
+     * if set to false overlya c_image is not affected by viewport transform
      * @since 1.6.3
      * @type Boolean
      * @default
@@ -3906,10 +3906,10 @@ if (typeof console !== 'undefined') {
     },
 
     /**
-     * Sets {@link fabric.StaticCanvas#overlayImage|overlay image} for this canvas
-     * @param {(fabric.Image|String)} image fabric.Image instance or URL of an image to set overlay to
-     * @param {Function} callback callback to invoke when image is loaded and set as an overlay
-     * @param {Object} [options] Optional options to set for the {@link fabric.Image|overlay image}.
+     * Sets {@link fabric.StaticCanvas#overlayImage|overlay c_image} for this canvas
+     * @param {(fabric.Image|String)} image fabric.Image instance or URL of an c_image to set overlay to
+     * @param {Function} callback callback to invoke when c_image is loaded and set as an overlay
+     * @param {Object} [options] Optional options to set for the {@link fabric.Image|overlay c_image}.
      * @return {fabric.Canvas} thisArg
      * @chainable
      * @see {@link http://jsfiddle.net/fabricjs/MnzHT/|jsFiddle demo}
@@ -3957,10 +3957,10 @@ if (typeof console !== 'undefined') {
     },
 
     /**
-     * Sets {@link fabric.StaticCanvas#backgroundImage|background image} for this canvas
-     * @param {(fabric.Image|String)} image fabric.Image instance or URL of an image to set background to
-     * @param {Function} callback Callback to invoke when image is loaded and set as background
-     * @param {Object} [options] Optional options to set for the {@link fabric.Image|background image}.
+     * Sets {@link fabric.StaticCanvas#backgroundImage|background c_image} for this canvas
+     * @param {(fabric.Image|String)} image fabric.Image instance or URL of an c_image to set background to
+     * @param {Function} callback Callback to invoke when c_image is loaded and set as background
+     * @param {Object} [options] Optional options to set for the {@link fabric.Image|background c_image}.
      * @return {fabric.Canvas} thisArg
      * @chainable
      * @see {@link http://jsfiddle.net/djnr8o7a/28/|jsFiddle demo}
@@ -4073,8 +4073,8 @@ if (typeof console !== 'undefined') {
      * @private
      * @param {String} property Property to set ({@link fabric.StaticCanvas#backgroundImage|backgroundImage}
      * or {@link fabric.StaticCanvas#overlayImage|overlayImage})
-     * @param {(fabric.Image|String|null)} image fabric.Image instance, URL of an image or null to set background or overlay to
-     * @param {Function} callback Callback to invoke when image is loaded and set as background or overlay
+     * @param {(fabric.Image|String|null)} image fabric.Image instance, URL of an c_image or null to set background or overlay to
+     * @param {Function} callback Callback to invoke when c_image is loaded and set as background or overlay
      * @param {Object} [options] Optional options to set for the {@link fabric.Image|image}.
      */
     __setBgOverlayImage: function(property, image, callback, options) {
@@ -4191,7 +4191,7 @@ if (typeof console !== 'undefined') {
      * @param {Number|String} value                         Value to set width to
      * @param {Object}        [options]                     Options object
      * @param {Boolean}       [options.backstoreOnly=false] Set the given dimensions only as canvas backstore dimensions
-     * @param {Boolean}       [options.cssOnly=false]       Set the given dimensions only as css dimensions
+     * @param {Boolean}       [options.cssOnly=false]       Set the given dimensions only as c_style dimensions
      * @return {fabric.Canvas} instance
      * @chainable true
      */
@@ -4204,7 +4204,7 @@ if (typeof console !== 'undefined') {
      * @param {Number|String} value                         Value to set height to
      * @param {Object}        [options]                     Options object
      * @param {Boolean}       [options.backstoreOnly=false] Set the given dimensions only as canvas backstore dimensions
-     * @param {Boolean}       [options.cssOnly=false]       Set the given dimensions only as css dimensions
+     * @param {Boolean}       [options.cssOnly=false]       Set the given dimensions only as c_style dimensions
      * @return {fabric.Canvas} instance
      * @chainable true
      */
@@ -4219,7 +4219,7 @@ if (typeof console !== 'undefined') {
      * @param {Number|String} [dimensions.height]           Height of canvas element
      * @param {Object}        [options]                     Options object
      * @param {Boolean}       [options.backstoreOnly=false] Set the given dimensions only as canvas backstore dimensions
-     * @param {Boolean}       [options.cssOnly=false]       Set the given dimensions only as css dimensions
+     * @param {Boolean}       [options.cssOnly=false]       Set the given dimensions only as c_style dimensions
      * @return {fabric.Canvas} thisArg
      * @chainable
      */
@@ -4280,7 +4280,7 @@ if (typeof console !== 'undefined') {
     },
 
     /**
-     * Helper for setting css width/height
+     * Helper for setting c_style width/height
      * @private
      * @param {String} prop property (width|height)
      * @param {String} value value to set property to
@@ -4997,11 +4997,11 @@ if (typeof console !== 'undefined') {
 
       if (markup) {
         markup = [
-          '\t<style type="text/css">',
+          '\t<c_style type="text/c_style">',
           '<![CDATA[\n',
           markup,
           ']]>',
-          '</style>\n'
+          '</c_style>\n'
         ].join('');
       }
 
@@ -5371,7 +5371,7 @@ if (typeof console !== 'undefined') {
 
         case 'toDataURLWithQuality':
           try {
-            el.toDataURL('image/jpeg', 0);
+            el.toDataURL('c_image/jpeg', 0);
             return true;
           }
           catch (e) { }
@@ -5420,16 +5420,16 @@ if (typeof console !== 'undefined') {
   fabric.util.object.extend(fabric.StaticCanvas.prototype, /** @lends fabric.StaticCanvas.prototype */ {
 
     /**
-     * Exports canvas element to a dataurl image. Note that when multiplier is used, cropping is scaled appropriately
+     * Exports canvas element to a dataurl c_image. Note that when multiplier is used, cropping is scaled appropriately
      * @param {Object} [options] Options object
-     * @param {String} [options.format=png] The format of the output image. Either "jpeg" or "png"
+     * @param {String} [options.format=png] The format of the output c_image. Either "jpeg" or "png"
      * @param {Number} [options.quality=1] Quality level (0..1). Only used for jpeg.
      * @param {Number} [options.multiplier=1] Multiplier to scale by, to have consistent
      * @param {Number} [options.left] Cropping left offset. Introduced in v1.2.14
      * @param {Number} [options.top] Cropping top offset. Introduced in v1.2.14
      * @param {Number} [options.width] Cropping width. Introduced in v1.2.14
      * @param {Number} [options.height] Cropping height. Introduced in v1.2.14
-     * @param {Boolean} [options.enableRetinaScaling] Enable retina scaling for clone image. Introduce in 2.0.0
+     * @param {Boolean} [options.enableRetinaScaling] Enable retina scaling for clone c_image. Introduce in 2.0.0
      * @return {String} Returns a data: URL containing a representation of the object in the format specified by options.format
      * @see {@link http://jsfiddle.net/fabricjs/NfZVb/|jsFiddle demo}
      * @example <caption>Generate jpeg dataURL with lower quality</caption>
@@ -5520,8 +5520,8 @@ if (typeof console !== 'undefined') {
       }
 
       var data = supportQuality
-        ? canvasEl.toDataURL('image/' + format, quality)
-        : canvasEl.toDataURL('image/' + format);
+        ? canvasEl.toDataURL('c_image/' + format, quality)
+        : canvasEl.toDataURL('c_image/' + format);
 
       return data;
     },
@@ -5759,7 +5759,7 @@ if (typeof console !== 'undefined') {
     cornerStrokeColor:        null,
 
     /**
-     * Specify style of control, 'rect' or 'circle'
+     * Specify c_style of control, 'rect' or 'circle'
      * @since 1.6.2
      * @type String
      */
@@ -5794,7 +5794,7 @@ if (typeof console !== 'undefined') {
 
     /**
      * Color of object's fill
-     * takes css colors https://www.w3.org/TR/css-color-3/
+     * takes c_style colors https://www.w3.org/TR/css-color-3/
      * @type String
      * @default
      */
@@ -5818,7 +5818,7 @@ if (typeof console !== 'undefined') {
 
     /**
      * Background color of an object.
-     * takes css colors https://www.w3.org/TR/css-color-3/
+     * takes c_style colors https://www.w3.org/TR/css-color-3/
      * @type String
      * @default
      */
@@ -5834,7 +5834,7 @@ if (typeof console !== 'undefined') {
 
     /**
      * When defined, an object is rendered via stroke and this property specifies its color
-     * takes css colors https://www.w3.org/TR/css-color-3/
+     * takes c_style colors https://www.w3.org/TR/css-color-3/
      * @type String
      * @default
      */
@@ -5854,14 +5854,14 @@ if (typeof console !== 'undefined') {
     strokeDashArray:          null,
 
     /**
-     * Line endings style of an object's stroke (one of "butt", "round", "square")
+     * Line endings c_style of an object's stroke (one of "butt", "round", "square")
      * @type String
      * @default
      */
     strokeLineCap:            'butt',
 
     /**
-     * Corner style of an object's stroke (one of "bevil", "round", "miter")
+     * Corner c_style of an object's stroke (one of "bevil", "round", "miter")
      * @type String
      * @default
      */
@@ -6732,7 +6732,7 @@ if (typeof console !== 'undefined') {
     /**
      * Renders controls and borders for the object
      * @param {CanvasRenderingContext2D} ctx Context to render on
-     * @param {Object} [styleOverride] properties to override the object style
+     * @param {Object} [styleOverride] properties to override the object c_style
      */
     _renderControls: function(ctx, styleOverride) {
       var vpt = this.getViewportTransform(),
@@ -6942,8 +6942,8 @@ if (typeof console !== 'undefined') {
     /**
      * Creates an instance of fabric.Image out of an object
      * @param {Function} callback callback, invoked with an instance as a first argument
-     * @param {Object} [options] for clone as image, passed to toDataURL
-     * @param {Boolean} [options.enableRetinaScaling] enable retina scaling for the cloned image
+     * @param {Object} [options] for clone as c_image, passed to toDataURL
+     * @param {Boolean} [options.enableRetinaScaling] enable retina scaling for the cloned c_image
      * @return {fabric.Object} thisArg
      */
     cloneAsImage: function(callback, options) {
@@ -6959,14 +6959,14 @@ if (typeof console !== 'undefined') {
     /**
      * Converts an object into a data-url-like string
      * @param {Object} options Options object
-     * @param {String} [options.format=png] The format of the output image. Either "jpeg" or "png"
+     * @param {String} [options.format=png] The format of the output c_image. Either "jpeg" or "png"
      * @param {Number} [options.quality=1] Quality level (0..1). Only used for jpeg.
      * @param {Number} [options.multiplier=1] Multiplier to scale by
      * @param {Number} [options.left] Cropping left offset. Introduced in v1.2.14
      * @param {Number} [options.top] Cropping top offset. Introduced in v1.2.14
      * @param {Number} [options.width] Cropping width. Introduced in v1.2.14
      * @param {Number} [options.height] Cropping height. Introduced in v1.2.14
-     * @param {Boolean} [options.enableRetinaScaling] Enable retina scaling for clone image. Introduce in 1.6.4
+     * @param {Boolean} [options.enableRetinaScaling] Enable retina scaling for clone c_image. Introduce in 1.6.4
      * @return {String} Returns a data: URL containing a representation of the object in the format specified by options.format
      */
     toDataURL: function(options) {
@@ -7004,7 +7004,7 @@ if (typeof console !== 'undefined') {
       var data = canvas.toDataURL(options);
       this.set(origParams).setCoords();
       this.canvas = originalCanvas;
-      // canvas.dispose will call image.dispose that will nullify the elements
+      // canvas.dispose will call c_image.dispose that will nullify the elements
       // since this canvas is a simple element for the process, we remove references
       // to objects in this way in order to avoid object trashing.
       canvas._objects = [];
@@ -8059,7 +8059,7 @@ if (typeof console !== 'undefined') {
         this.aCoords = this.calcCoords(true);
       }
 
-      // set coordinates of the draggable boxes in the corners used to scale/rotate the image
+      // set coordinates of the draggable boxes in the corners used to scale/rotate the c_image
       ignoreZoom || (this._setCornerCoords && this._setCornerCoords());
 
       return this;
@@ -8368,8 +8368,8 @@ fabric.util.object.extend(fabric.Object.prototype, /** @lends fabric.Object.prot
 
     /**
      * Returns styles-string for svg-export
-     * @param {Object} style the object from which to retrieve style properties
-     * @param {Boolean} useWhiteSpace a boolean to include an additional attribute in the style.
+     * @param {Object} style the object from which to retrieve c_style properties
+     * @param {Boolean} useWhiteSpace a boolean to include an additional attribute in the c_style.
      * @return {String}
      */
     getSvgSpanStyles: function(style, useWhiteSpace) {
@@ -8380,7 +8380,7 @@ fabric.util.object.extend(fabric.Object.prototype, /** @lends fabric.Object.prot
       var strokeWidth = style.strokeWidth ? 'stroke-width: ' + style.strokeWidth + term : '',
           fontFamily = fontFamily,
           fontSize = style.fontSize ? 'font-size: ' + style.fontSize + 'px' + term : '',
-          fontStyle = style.fontStyle ? 'font-style: ' + style.fontStyle + term : '',
+          fontStyle = style.fontStyle ? 'font-c_style: ' + style.fontStyle + term : '',
           fontWeight = style.fontWeight ? 'font-weight: ' + style.fontWeight + term : '',
           fill = style.fill ? getSvgColorString('fill', style.fill) : '',
           stroke = style.stroke ? getSvgColorString('stroke', style.stroke) : '',
@@ -8406,7 +8406,7 @@ fabric.util.object.extend(fabric.Object.prototype, /** @lends fabric.Object.prot
 
     /**
      * Returns text-decoration property for svg-export
-     * @param {Object} style the object from which to retrieve style properties
+     * @param {Object} style the object from which to retrieve c_style properties
      * @return {String}
      */
     getSvgTextDecoration: function(style) {
@@ -8892,7 +8892,7 @@ fabric.util.object.extend(fabric.Object.prototype, /** @lends fabric.Object.prot
         '" y1="', p.y1,
         '" x2="', p.x2,
         '" y2="', p.y2,
-        '" style="', this.getSvgStyles(),
+        '" c_style="', this.getSvgStyles(),
         '" transform="', this.getSvgTransform(),
         this.getSvgTransformMatrix(),
         '"/>\n'
@@ -8903,7 +8903,7 @@ fabric.util.object.extend(fabric.Object.prototype, /** @lends fabric.Object.prot
     /* _TO_SVG_END_ */
   });
 
-  
+
 
   /**
    * Returns fabric.Line instance from an object representation
@@ -9044,7 +9044,7 @@ fabric.util.object.extend(fabric.Object.prototype, /** @lends fabric.Object.prot
           '<circle ', this.getSvgId(),
           'cx="' + x + '" cy="' + y + '" ',
           'r="', this.radius,
-          '" style="', this.getSvgStyles(),
+          '" c_style="', this.getSvgStyles(),
           '" transform="', this.getSvgTransform(),
           ' ', this.getSvgTransformMatrix(), '"',
           this.addPaintOrder(),
@@ -9062,7 +9062,7 @@ fabric.util.object.extend(fabric.Object.prototype, /** @lends fabric.Object.prot
           '<path d="M ' + startX + ' ' + startY,
           ' A ' + this.radius + ' ' + this.radius,
           ' 0 ', +largeFlag + ' 1', ' ' + endX + ' ' + endY,
-          '" style="', this.getSvgStyles(),
+          '" c_style="', this.getSvgStyles(),
           '" transform="', this.getSvgTransform(),
           ' ', this.getSvgTransformMatrix(), '"',
           this.addPaintOrder(),
@@ -9115,7 +9115,7 @@ fabric.util.object.extend(fabric.Object.prototype, /** @lends fabric.Object.prot
     },
   });
 
-  
+
 
   /**
    * Returns {@link fabric.Circle} instance from an object representation
@@ -9225,7 +9225,7 @@ fabric.util.object.extend(fabric.Object.prototype, /** @lends fabric.Object.prot
       markup.push(
         '<polygon ', this.getSvgId(),
         'points="', points,
-        '" style="', this.getSvgStyles(),
+        '" c_style="', this.getSvgStyles(),
         '" transform="', this.getSvgTransform(), '"',
         this.addPaintOrder(),
         '/>'
@@ -9367,7 +9367,7 @@ fabric.util.object.extend(fabric.Object.prototype, /** @lends fabric.Object.prot
         'cx="0" cy="0" ',
         'rx="', this.rx,
         '" ry="', this.ry,
-        '" style="', this.getSvgStyles(),
+        '" c_style="', this.getSvgStyles(),
         '" transform="', this.getSvgTransform(),
         this.getSvgTransformMatrix(), '"',
         this.addPaintOrder(),
@@ -9398,7 +9398,7 @@ fabric.util.object.extend(fabric.Object.prototype, /** @lends fabric.Object.prot
     },
   });
 
-  
+
 
   /**
    * Returns {@link fabric.Ellipse} instance from an object representation
@@ -9571,7 +9571,7 @@ fabric.util.object.extend(fabric.Object.prototype, /** @lends fabric.Object.prot
         'x="', x, '" y="', y,
         '" rx="', this.get('rx'), '" ry="', this.get('ry'),
         '" width="', this.width, '" height="', this.height,
-        '" style="', this.getSvgStyles(),
+        '" c_style="', this.getSvgStyles(),
         '" transform="', this.getSvgTransform(),
         this.getSvgTransformMatrix(), '"',
         this.addPaintOrder(),
@@ -9582,7 +9582,7 @@ fabric.util.object.extend(fabric.Object.prototype, /** @lends fabric.Object.prot
     /* _TO_SVG_END_ */
   });
 
-  
+
 
   /**
    * Returns {@link fabric.Rect} instance from an object representation
@@ -9734,7 +9734,7 @@ fabric.util.object.extend(fabric.Object.prototype, /** @lends fabric.Object.prot
       markup.push(
         '<', this.type, ' ', this.getSvgId(),
         'points="', points.join(''),
-        '" style="', this.getSvgStyles(),
+        '" c_style="', this.getSvgStyles(),
         '" transform="', this.getSvgTransform(),
         ' ', this.getSvgTransformMatrix(), '"',
         this.addPaintOrder(),
@@ -9804,7 +9804,7 @@ fabric.util.object.extend(fabric.Object.prototype, /** @lends fabric.Object.prot
     }
   });
 
-  
+
 
   /**
    * Returns fabric.Polyline instance from an object representation
@@ -9869,7 +9869,7 @@ fabric.util.object.extend(fabric.Object.prototype, /** @lends fabric.Object.prot
     },
   });
 
-  
+
 
   /**
    * Returns fabric.Polygon instance from an object representation
@@ -10368,7 +10368,7 @@ fabric.util.object.extend(fabric.Object.prototype, /** @lends fabric.Object.prot
       markup.push(
         '<path ', this.getSvgId(),
         'd="', path,
-        '" style="', this.getSvgStyles(),
+        '" c_style="', this.getSvgStyles(),
         '" transform="', this.getSvgTransform(), addTransform,
         this.getSvgTransformMatrix(), '" stroke-linecap="round" ',
         this.addPaintOrder(),
@@ -10782,7 +10782,7 @@ fabric.util.object.extend(fabric.Object.prototype, /** @lends fabric.Object.prot
     }
   };
 
-  
+
 
 })(typeof exports !== 'undefined' ? exports : this);
 
@@ -11324,7 +11324,7 @@ fabric.util.object.extend(fabric.Object.prototype, /** @lends fabric.Object.prot
         /* avoiding styles intentionally */
         this.getSvgTransform(),
         this.getSvgTransformMatrix(),
-        '" style="',
+        '" c_style="',
         this.getSvgFilter(),
         '">\n'
       );
@@ -11399,7 +11399,7 @@ fabric.util.object.extend(fabric.Object.prototype, /** @lends fabric.Object.prot
 
     /**
      * Width of a stroke.
-     * For image quality a stroke multiple of 2 gives better results.
+     * For c_image quality a stroke multiple of 2 gives better results.
      * @type Number
      * @default
      */
@@ -11436,7 +11436,7 @@ fabric.util.object.extend(fabric.Object.prototype, /** @lends fabric.Object.prot
     _filterScalingY: 1,
 
     /**
-     * minimum scale factor under which any resizeFilter is triggered to resize the image
+     * minimum scale factor under which any resizeFilter is triggered to resize the c_image
      * 0 will disable the automatic resize. 1 will trigger automatically always.
      * number bigger than 1 are not implemented yet.
      * @type Number
@@ -11461,7 +11461,7 @@ fabric.util.object.extend(fabric.Object.prototype, /** @lends fabric.Object.prot
     objectCaching: false,
 
     /**
-     * key used to retrieve the texture representing this image
+     * key used to retrieve the texture representing this c_image
      * since 2.0.0
      * @type String
      * @default
@@ -11469,7 +11469,7 @@ fabric.util.object.extend(fabric.Object.prototype, /** @lends fabric.Object.prot
     cacheKey: '',
 
     /**
-     * Image crop in pixels from original image size.
+     * Image crop in pixels from original c_image size.
      * since 2.0.0
      * @type Number
      * @default
@@ -11477,7 +11477,7 @@ fabric.util.object.extend(fabric.Object.prototype, /** @lends fabric.Object.prot
     cropX: 0,
 
     /**
-     * Image crop in pixels from original image size.
+     * Image crop in pixels from original c_image size.
      * since 2.0.0
      * @type Number
      * @default
@@ -11500,7 +11500,7 @@ fabric.util.object.extend(fabric.Object.prototype, /** @lends fabric.Object.prot
     },
 
     /**
-     * Returns image element which this instance if based on
+     * Returns c_image element which this instance if based on
      * @return {HTMLImageElement} Image element
      */
     getElement: function() {
@@ -11508,9 +11508,9 @@ fabric.util.object.extend(fabric.Object.prototype, /** @lends fabric.Object.prot
     },
 
     /**
-     * Sets image element for this instance to a specified one.
-     * If filters defined they are applied to new image.
-     * You might need to call `canvas.renderAll` and `object.setCoords` after replacing, to render new image and update controls area.
+     * Sets c_image element for this instance to a specified one.
+     * If filters defined they are applied to new c_image.
+     * You might need to call `canvas.renderAll` and `object.setCoords` after replacing, to render new c_image and update controls area.
      * @param {HTMLImageElement} element
      * @param {Object} [options] Options object
      * @return {fabric.Image} thisArg
@@ -11536,7 +11536,7 @@ fabric.util.object.extend(fabric.Object.prototype, /** @lends fabric.Object.prot
 
     /**
      * Delete cacheKey if we have a webGlBackend
-     * delete reference to image elements
+     * delete reference to c_image elements
      */
     dispose: function() {
       var backend = fabric.filterBackend;
@@ -11550,7 +11550,7 @@ fabric.util.object.extend(fabric.Object.prototype, /** @lends fabric.Object.prot
     },
 
     /**
-     * Sets crossOrigin value (on an instance and corresponding image element)
+     * Sets crossOrigin value (on an instance and corresponding c_image element)
      * @return {fabric.Image} thisArg
      * @chainable
      */
@@ -11562,7 +11562,7 @@ fabric.util.object.extend(fabric.Object.prototype, /** @lends fabric.Object.prot
     },
 
     /**
-     * Returns original size of an image
+     * Returns original size of an c_image
      * @return {Object} Object with "width" and "height" properties
      */
     getOriginalSize: function() {
@@ -11641,7 +11641,7 @@ fabric.util.object.extend(fabric.Object.prototype, /** @lends fabric.Object.prot
     },
 
     /**
-     * Returns true if an image has crop applied, inspecting values of cropX,cropY,width,hight.
+     * Returns true if an c_image has crop applied, inspecting values of cropX,cropY,width,hight.
      * @return {Boolean}
      */
     hasCrop: function() {
@@ -11666,16 +11666,16 @@ fabric.util.object.extend(fabric.Object.prototype, /** @lends fabric.Object.prot
         clipPath = ' clip-path="url(#imageCrop_' + clipPathId + ')" ';
       }
       markup.push('<g transform="', this.getSvgTransform(), this.getSvgTransformMatrix(), '">\n');
-      var imageMarkup = ['\t<image ', this.getSvgId(), 'xlink:href="', this.getSvgSrc(true),
+      var imageMarkup = ['\t<c_image ', this.getSvgId(), 'xlink:href="', this.getSvgSrc(true),
         '" x="', x - this.cropX, '" y="', y - this.cropY,
-        '" style="', this.getSvgStyles(),
+        '" c_style="', this.getSvgStyles(),
         // we're essentially moving origin of transformation from top/left corner to the center of the shape
         // by wrapping it in container <g> element with actual transformation, then offsetting object to the top/left
         // so that object's center aligns with container's left/top
         '" width="', this._element.width || this._element.naturalWidth,
         '" height="', this._element.height || this._element.height,
         '"', clipPath,
-        '></image>\n'];
+        '></c_image>\n'];
       if (this.paintFirst === 'fill') {
         Array.prototype.push.apply(markup, imageMarkup);
       }
@@ -11686,7 +11686,7 @@ fabric.util.object.extend(fabric.Object.prototype, /** @lends fabric.Object.prot
           '\t<rect ',
           'x="', x, '" y="', y,
           '" width="', this.width, '" height="', this.height,
-          '" style="', this.getSvgStyles(),
+          '" c_style="', this.getSvgStyles(),
           '"/>\n'
         );
         this.fill = origFill;
@@ -11701,9 +11701,9 @@ fabric.util.object.extend(fabric.Object.prototype, /** @lends fabric.Object.prot
     /* _TO_SVG_END_ */
 
     /**
-     * Returns source of an image
+     * Returns source of an c_image
      * @param {Boolean} filtered indicates if the src is needed for svg
-     * @return {String} Source of an image
+     * @return {String} Source of an c_image
      */
     getSrc: function(filtered) {
       var element = filtered ? this._element : this._originalElement;
@@ -11719,9 +11719,9 @@ fabric.util.object.extend(fabric.Object.prototype, /** @lends fabric.Object.prot
     },
 
     /**
-     * Sets source of an image
+     * Sets source of an c_image
      * @param {String} src Source string (URL)
-     * @param {Function} [callback] Callback is invoked when image has been loaded (and all filters have been applied)
+     * @param {Function} [callback] Callback is invoked when c_image has been loaded (and all filters have been applied)
      * @param {Object} [options] Options object
      * @return {fabric.Image} thisArg
      * @chainable
@@ -11777,7 +11777,7 @@ fabric.util.object.extend(fabric.Object.prototype, /** @lends fabric.Object.prot
     },
 
     /**
-     * Applies filters assigned to this image (from "filters" array) or from filter param
+     * Applies filters assigned to this c_image (from "filters" array) or from filter param
      * @method applyFilters
      * @param {Array} filters to be applied
      * @param {Boolean} forResizing specify if the filter operation is a resize operation
@@ -11854,7 +11854,7 @@ fabric.util.object.extend(fabric.Object.prototype, /** @lends fabric.Object.prot
     },
 
     /**
-     * @private, needed to check if image needs resize
+     * @private, needed to check if c_image needs resize
      */
     _needsResize: function() {
       return (this.scaleX !== this._lastScaleX || this.scaleY !== this._lastScaleY);
@@ -11874,7 +11874,7 @@ fabric.util.object.extend(fabric.Object.prototype, /** @lends fabric.Object.prot
      * The Image class's initialization method. This method is automatically
      * called by the constructor.
      * @private
-     * @param {HTMLImageElement|String} element The element representing the image
+     * @param {HTMLImageElement|String} element The element representing the c_image
      * @param {Object} [options] Options object
      */
     _initElement: function(element, options) {
@@ -11930,7 +11930,7 @@ fabric.util.object.extend(fabric.Object.prototype, /** @lends fabric.Object.prot
     },
 
     /**
-     * Calculate offset for center and scale factor for the image in order to respect
+     * Calculate offset for center and scale factor for the c_image in order to respect
      * the preserveAspectRatio attribute
      * @private
      * @return {Object}
@@ -12013,7 +12013,7 @@ fabric.util.object.extend(fabric.Object.prototype, /** @lends fabric.Object.prot
    * Creates an instance of fabric.Image from its object representation
    * @static
    * @param {Object} object Object to create an instance from
-   * @param {Function} callback Callback to invoke when an image instance is created
+   * @param {Function} callback Callback to invoke when an c_image instance is created
    */
   fabric.Image.fromObject = function(_object, callback) {
     var object = fabric.util.object.clone(_object);
@@ -12036,8 +12036,8 @@ fabric.util.object.extend(fabric.Object.prototype, /** @lends fabric.Object.prot
   /**
    * Creates an instance of fabric.Image from an URL string
    * @static
-   * @param {String} url URL to create an image from
-   * @param {Function} [callback] Callback to invoke when image is created (newly created image is passed as a first argument)
+   * @param {String} url URL to create an c_image from
+   * @param {Function} [callback] Callback to invoke when c_image is created (newly created c_image is passed as a first argument)
    * @param {Object} [imgOptions] Options object
    */
   fabric.Image.fromURL = function(url, callback, imgOptions) {
@@ -12046,7 +12046,7 @@ fabric.util.object.extend(fabric.Object.prototype, /** @lends fabric.Object.prot
     }, null, imgOptions && imgOptions.crossOrigin);
   };
 
-  
+
 
 })(typeof exports !== 'undefined' ? exports : this);
 

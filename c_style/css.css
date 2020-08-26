@@ -266,7 +266,7 @@
   left: 0;
   width: 16px;
   height: 16px;
-  background: url("../image/好评@2x.png") no-repeat;
+  background: url("../c_image/好评@2x.png") no-repeat;
   content: '';
   background-size: contain;
 }
@@ -276,7 +276,7 @@
   left: 0;
   width: 16px;
   height: 16px;
-  background: url("../image/icon_good_def@2x.png") no-repeat;
+  background: url("../c_image/icon_good_def@2x.png") no-repeat;
   content: '';
   background-size: contain;
 }
@@ -289,7 +289,7 @@
   left: 0;
   width: 16px;
   height: 16px;
-  background: url("../image/icon_normal_pre@2x.png") no-repeat;
+  background: url("../c_image/icon_normal_pre@2x.png") no-repeat;
   content: '';
   background-size: contain;
 }
@@ -299,7 +299,7 @@
   left: 0;
   width: 16px;
   height: 16px;
-  background: url("../image/icon_normal_def@2x.png") no-repeat;
+  background: url("../c_image/icon_normal_def@2x.png") no-repeat;
   content: '';
   background-size: contain;
 }
@@ -312,7 +312,7 @@
   left: 0;
   width: 16px;
   height: 16px;
-  background: url("../image/icon_bad_pre@2x.png") no-repeat;
+  background: url("../c_image/icon_bad_pre@2x.png") no-repeat;
   content: '';
   background-size: contain;
 }
@@ -322,7 +322,7 @@
   left: 0;
   width: 16px;
   height: 16px;
-  background: url("../image/icon_bad_def@2x.png") no-repeat;
+  background: url("../c_image/icon_bad_def@2x.png") no-repeat;
   content: '';
   background-size: contain;
 }
